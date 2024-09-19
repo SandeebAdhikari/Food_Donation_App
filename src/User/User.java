@@ -6,16 +6,27 @@ public class User {
     public int id;
     public String firstName;
     public String lastName;
-    public String address;
-    public String phoneNumber;
+    public String userName;
+    public String password;
     public String role;
 
-    public User(int id, String firstName, String lastName, String address, String phoneNumber, String role) {
+    public User(){}
+
+    public User(User user) {
+        this.id = user.id;
+        this.firstName = user.firstName;
+        this.lastName = user.lastName;
+        this.userName = user.userName;
+        this.password = user.password;
+        this.role = user.role;
+    }
+
+    public User(int id, String firstName, String lastName, String userName, String password, String role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
+        this.userName = userName;
+        this.password = password;
         this.role = role;
     }
 
@@ -31,6 +42,7 @@ public class User {
         }
     }
 
+    public User getUser() {return this;}
     public String getFirstName() {
         return firstName;
     }
@@ -47,24 +59,20 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setUserName(String address) {
+        this.userName = userName;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        if (phoneNumber.length() > 10) {
-            this.phoneNumber = phoneNumber;
-        } else {
-            System.out.println("Please enter a valid phone number!!");
-        }
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getRole() {
@@ -80,8 +88,8 @@ public class User {
         userObj.put("id", id);
         userObj.put("firstName", firstName);
         userObj.put("lastName", lastName);
-        userObj.put("address", address);
-        userObj.put("phoneNumber", phoneNumber);
+        userObj.put("userName", userName);
+        userObj.put("password", password);
         userObj.put("role", role);
         return userObj;
     }
@@ -93,6 +101,6 @@ public class User {
 
         return "<html>Role: " + roleText + "<br>" + idLabel + ": " + id +
                 "<br>First Name: " + firstName + "<br>Last Name: " + lastName +
-                "<br>Address: " + address + "<br>Phone Number: " + phoneNumber + "</html>";
+                "<br>User Name: " + userName + "<br>Password: " + password + "</html>";
     }
 }
