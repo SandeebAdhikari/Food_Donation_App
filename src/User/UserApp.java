@@ -8,9 +8,10 @@ import org.json.simple.parser.ParseException;
 import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import static utilities.utilities.saveUsersToFile;
 
 public class UserApp {
     public ArrayList<User> users;
@@ -49,20 +50,6 @@ public class UserApp {
         } catch (FileNotFoundException e) {
             System.out.println("No previous users found.");
         } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void saveUsersToFile() {
-        JSONArray userList = new JSONArray();
-        for (User user : users) {
-            userList.add(user.toJSON());
-        }
-
-        try (FileWriter file = new FileWriter(FILE_PATH)) {
-            file.write(userList.toJSONString());
-            file.flush();
-        } catch (IOException e) {
             e.printStackTrace();
         }
     }

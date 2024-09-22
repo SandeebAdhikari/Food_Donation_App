@@ -5,10 +5,12 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import static utilities.utilities.saveUsersToFile;
+
 public class UserGUI {
     public UserApp app;
     public JFrame frame;
-    public JPanel userPanel;
+    //public JPanel userPanel;
 
     public UserGUI(UserApp app) {
         this.app = app;
@@ -188,6 +190,6 @@ public class UserGUI {
         }
 
 
-        app.saveUsersToFile();
+        saveUsersToFile();
     }
 }

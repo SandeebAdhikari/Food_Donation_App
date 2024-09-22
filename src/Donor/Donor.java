@@ -33,5 +33,4 @@ public class Donor extends User {
     public void setFoodType(String foodType) {this.foodType = foodType;}
     public void setFoodQuantity(int foodQuantity) {this.foodQuantity = foodQuantity;}
     public void setUnit(String unit) {this.unit = unit;}
-
 }

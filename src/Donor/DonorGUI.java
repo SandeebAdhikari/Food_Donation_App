@@ -13,7 +13,7 @@ public class DonorGUI {
     private List<Donor> donorList = new ArrayList<>();
     public DonorGUI() {
         Scanner scanner = new Scanner(System.in);
-        for(int i = 0; i <2 ; i++) {
+        for(int i = 0; i < 2 ; i++) {
             String firstName = scanner.nextLine();
             String lastName = scanner.nextLine();
             String userName = scanner.nextLine();
@@ -29,14 +29,11 @@ public class DonorGUI {
             User donarUser = donorInterface.getParentUser(donor);
             System.out.println(donarUser);
             ConsumerInterface consumerInterface = new DonarImplementation();
-            User consumerUser = consumerInterface.getParentUser(consumer);
-
+            //User consumerUser = consumerInterface.getParentUser(consumer);
         }
     }
 
     public static void main(String[] args) {
         new DonorGUI();
-
     }
-
 }
