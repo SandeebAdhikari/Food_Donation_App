@@ -2,6 +2,8 @@ package User;
 
 import org.json.simple.JSONObject;
 
+import java.lang.reflect.Field;
+
 public class User {
     public int id;
     public String firstName;
@@ -82,6 +84,7 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+
 
     public JSONObject toJSON() {
         JSONObject userObj = new JSONObject();

@@ -14,7 +14,7 @@ public class UserGUI {
 
     public UserGUI(UserApp app) {
         this.app = app;
-        frame = new JFrame("User List");
+        frame = new JFrame("Sign Up");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 400);  // Adjust the window size
 
@@ -32,10 +32,10 @@ public class UserGUI {
         JTextField firstNameInputField = new JTextField(15);
         JLabel lastNameLabel = new JLabel("Last Name:");
         JTextField lastNameInputField = new JTextField(15);
-        JLabel addressLabel = new JLabel("Address:");
-        JTextField addressInputField = new JTextField(15);
-        JLabel phoneNumberLabel = new JLabel("Phone Number:");
-        JTextField phoneNumberInputField = new JTextField(15);
+        JLabel emailLabel = new JLabel("Email:");
+        JTextField emailInputField = new JTextField(15);
+        JLabel passwordLabel = new JLabel("Password:");
+        JTextField passwordInputField = new JTextField(15);
 
         JButton addButton = new JButton("Add User");
         JButton viewUsersButton = new JButton("View Users");
@@ -60,15 +60,15 @@ public class UserGUI {
 
         gbc.gridx = 0;
         gbc.gridy = 3;
-        inputPanel.add(addressLabel, gbc);
+        inputPanel.add(emailLabel, gbc);
         gbc.gridx = 1;
-        inputPanel.add(addressInputField, gbc);
+        inputPanel.add(emailInputField, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 4;
-        inputPanel.add(phoneNumberLabel, gbc);
+        inputPanel.add(passwordLabel, gbc);
         gbc.gridx = 1;
-        inputPanel.add(phoneNumberInputField, gbc);
+        inputPanel.add(passwordInputField, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 5;
@@ -86,16 +86,16 @@ public class UserGUI {
         addButton.addActionListener(e -> {
             String firstName = firstNameInputField.getText();
             String lastName = lastNameInputField.getText();
-            String address = addressInputField.getText();
-            String phoneNumber = phoneNumberInputField.getText();
+            String email = emailInputField.getText();
+            String password = passwordInputField.getText();
             String role = roleComboBox.getSelectedItem().toString();
 
-            if (!(firstName.isEmpty() || lastName.isEmpty() || address.isEmpty() || phoneNumber.isEmpty())) {
-                app.addUser(firstName, lastName, address, phoneNumber, role);
+            if (!(firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || password.isEmpty())) {
+                app.addUser(firstName, lastName, email, password, role);
                 firstNameInputField.setText("");
                 lastNameInputField.setText("");
-                addressInputField.setText("");
-                phoneNumberInputField.setText("");
+                emailInputField.setText("");
+                passwordInputField.setText("");
             }
         });
 

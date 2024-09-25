@@ -1,10 +1,11 @@
 package Interface;
 
+import Consumer.Consumer;
 import User.User;
 import Donor.Donor;
 
 public interface DonarInterface {
-    User getParentUser(Donor donor);
+    void printDonorData(Donor donor);
 
 
 }
